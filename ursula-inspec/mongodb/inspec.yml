@@ -1,0 +1,7 @@
+name: inspec-mongodb
+title: InSpec Profile for MongoDB
+maintainer: Blue Box
+copyright: Blue Box
+license: Apache 2.0
+summary: An InSpec Compliance Profile for MongoDB
+version: 0.1.0
