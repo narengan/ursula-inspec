@@ -1,7 +1,0 @@
-name: inspec-mysql
-title: InSpec Profile for MySQL
-maintainer: Blue Box
-copyright: Blue Box
-license: Apache 2.0
-summary: An InSpec Compliance Profile for MySQL
-version: 0.1.0
