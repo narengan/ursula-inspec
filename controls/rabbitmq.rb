@@ -54,7 +54,7 @@ end
 control 'RABBITMQ005' do
   impact 0.5
   title 'Strict ownership and permissions for RabbitMQ log files to prevent unauthorized users from accessing them.'
-  desc 'Strict ownership(rabbitmq user and group ) and permissions(644) for mysql log files to prevent unauthorized users from accessing them.For audit purposes, the log file should not be editable by anyone other than the process that is writing to that file.'
+  desc 'Strict ownership(rabbitmq user and group ) and permissions(644) for rabbit log files to prevent unauthorized users from accessing them.For audit purposes, the log file should not be editable by anyone other than the process that is writing to that file.'
   tag 'production','development'
   tag 'rabbitmq'
   tag remediation: 'ursula <env> site.yml --tags=rabbitmq'
