@@ -1,0 +1,7 @@
+name: ursula-inspec
+title: InSpec Profile for Ursula
+maintainer: Blue Box
+copyright: Blue Box
+license: Apache 2.0
+summary: An InSpec Compliance Profile for various services set up by Ursula.
+version: 0.1.0

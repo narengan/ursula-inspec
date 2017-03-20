@@ -1,7 +1,0 @@
-name: inspec-kvm
-title: InSpec Profile for KVM
-maintainer: Blue Box
-copyright: Blue Box
-license: Apache 2.0
-summary: An InSpec Compliance Profile for KVM
-version: 0.1.0

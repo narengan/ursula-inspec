@@ -1,1 +1,0 @@
-# Inspec checks for MongoDB
