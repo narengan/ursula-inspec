@@ -1,6 +1,6 @@
 control 'MON001' do
   impact 0.5
-  title 'The MongoDB config file should be protected'
+  title 'The MongoDB config file should have the correct ownership and permissions'
   desc 'The Mongo DB config file should have the correct ownership and permissions'
   tag 'controller', 'mongo'
   tag remediation: 'ursula <env> site.yml --tags=mongodb'
@@ -26,14 +26,14 @@ end
 control 'MON003' do
   impact 0.5
   title 'The Mongo DB directory should have the correct ownership and permissions'
-  desc 'The Mongo DB config file should be configured for logs'
+  desc 'The Mongo DB directory should have the correct ownership and permissions'
   tag 'controller', 'mongo'
   tag remediation: 'ursula <env> site.yml --tags=mongodb'
   describe file ('/var/lib/mongodb') do
     it { should be_directory }
     its('mode') { should cmp '0750' }
     its('owner') { should eq 'mongodb' }
-    its('group') { should eq 'mongodb' }
+    its('group') { should eq 'root' }
   end
 end
 
@@ -72,7 +72,7 @@ end
 control 'MON006' do
   impact 0.5
   title 'The storage.bson file should have the correct ownership and permissions'
-  desc 'The storage.bson files should have the correct ownership and permissions'
+  desc 'The storage.bson file should have the correct ownership and permissions'
   tag 'controller', 'mongo'
   tag remediation: 'ursula <env> site.yml --tags=mongodb'
   only_if { File.file?('/var/lib/mongodb/storage.bson') }
