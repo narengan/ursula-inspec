@@ -32,9 +32,9 @@ control 'KVM003' do
   tag 'controller', 'nova'
   tag remediation: 'ursula <env> site.yml --tags=nova'
   describe ini('/etc/libvirt/libvirtd.conf') do
-    its('unix_sock_group') { should cmp "libvirt" }
-    its('unix_sock_ro_perms') { should cmp "\"0770\"" }
-    its('unix_sock_rw_perms') { should cmp "\"0770\"" }
+    its('unix_sock_group') { should match /^['"]libvirt['"]$/ }
+    its('unix_sock_ro_perms') { should match /^['"]0770['"]$/ }
+    its('unix_sock_rw_perms') { should match /^['"]0770['"]$/ }
     # The defaults should be fine
     its('listen_tcp') { should be_nil.or cmp "0" }
   end
@@ -47,10 +47,10 @@ control 'KVM004' do
   tag 'controller', 'nova'
   tag remediation: 'ursula <env> site.yml --tags=nova'
   describe ini('/etc/libvirt/qemu.conf') do
-      its('user') { should cmp "qemu" }
-      its('group') { should cmp "qemu" }
+      its('user') { should match /^['"]qemu['"]$/ }
+      its('group') { should match /^['"]qemu['"]$/ }
       # The defaults should be fine
-      its('vnc_listen') { should be_nil.or cmp "\"127.0.0.1\"" }
+      its('vnc_listen') { should be_nil.or match /^['"]127.0.0.1['"]$/ }
       its('dynamic_ownership') { should be_nil.or cmp "1" }
   end
 end
