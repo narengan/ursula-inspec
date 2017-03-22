@@ -31,8 +31,7 @@ control 'MYSQL003' do
   tag 'production','development'
   tag 'mysql'
   tag remediation: 'ursula <env> site.yml --tags=mysql'
-  files = {'/var/lib/mysql' => {'mode' => '0700','owner' => 'mysql', 'group' => 'mysql'},
-           '/var/run/mysqld' => {'mode' => '0755','owner' => 'mysql', 'group' => 'mysql'},
+  files = {'/var/run/mysqld' => {'mode' => '0755','owner' => 'mysql', 'group' => 'mysql'},
            '/etc/mysql/' => {'mode' => '0755', 'owner' => 'root', 'group' => 'root' }}
   files.each do |file, meta|
     describe file("#{file}") do
