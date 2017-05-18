@@ -8,7 +8,7 @@ control 'COMMON001' do
    PASS_MAX_DAYS     90'
 
   options = {
-    assignment_re: /^(\w+)\s+(\w+?)$/
+    assignment_regex: /^(\w+)\s+(\w+?)$/
   }
   describe parse_config_file('/etc/login.defs', options) do
     its('PASS_MAX_DAYS') { should_not eq nil }
